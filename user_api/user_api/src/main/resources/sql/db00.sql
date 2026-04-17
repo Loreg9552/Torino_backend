@@ -13,3 +13,6 @@ INSERT INTO users_db.books VALUES (1,1,'odissea');
 INSERT INTO users_db.books VALUES (2,2,'illiade');
 INSERT INTO users_db.books VALUES (3,10,'sparta');
 INSERT INTO users_db.books VALUES (4,10,'atene e la sua storia');
+--create default values for table "immobili"
+INSERT INTO users_db.immobili VALUES (1,'50','120','via degli alberi',10);
+INSERT INTO users_db.immobili VALUES (2,'50','120','via degli alberi',10);

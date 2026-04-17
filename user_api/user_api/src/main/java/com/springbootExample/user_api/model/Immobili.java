@@ -10,6 +10,9 @@ public class Immobili {
     private String via;
     private String prezzo;
     private String mq;
+    @ManyToOne
+    @JoinColumn(name = "idOwner", referencedColumnName = "id")
+    private User idOwner;
 
     public String getVia(){
             return this.via;
@@ -18,6 +21,10 @@ public class Immobili {
     public String getPrezzo(){
             return this.prezzo;
         }
+
+    public User getOwner(){
+        return this.idOwner;
+    }
 
     public void setVia(String via){
             this.via=via;
@@ -32,4 +39,8 @@ public class Immobili {
         }
 
     public void setMq(String mq){ this.mq=mq;}
+
+    public void setOwner(User idOwner){
+        this.idOwner=idOwner;
+    }
 }

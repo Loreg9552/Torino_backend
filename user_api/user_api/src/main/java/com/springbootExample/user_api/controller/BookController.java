@@ -1,7 +1,6 @@
 package com.springbootExample.user_api.controller;
 
 import com.springbootExample.user_api.model.Book;
-import com.springbootExample.user_api.model.User;
 import com.springbootExample.user_api.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
