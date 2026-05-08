@@ -1,4 +1,5 @@
 package com.springbootExample.user_api.controller;
+import org.springframework.http.HttpStatus;
 
 import com.springbootExample.user_api.model.Gestori;
 import com.springbootExample.user_api.model.User;
@@ -25,5 +26,14 @@ public class GestoriController {
     @PostMapping("/save")
     public ResponseEntity<Gestori> saveUser(@RequestBody Gestori gestore){
         return ResponseEntity.ok(gestoriService.saveGestore(gestore));
+    }
+
+    @GetMapping("/login")
+    public ResponseEntity<Gestori> getByLogin(@RequestParam String username, @RequestParam String password) {
+        Gestori gestore = gestoriService.findByLogin(username, password);
+        if (gestore != null) {
+            return ResponseEntity.ok(gestore);
+        }
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
 }

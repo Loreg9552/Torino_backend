@@ -28,4 +28,9 @@ public class GestoriService {
         return gestoriRepository.save(gestore);
     }
 
+    public Gestori findByLogin(String username, String password) {
+        return gestoriRepository.findByUserNameAndPassword(username, password)
+                .orElse(null); // geccezione da gestire
+    }
+
 }
